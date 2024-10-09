@@ -1,8 +1,12 @@
-import {Button, Col, Stack} from 'react-bootstrap';
+import React from 'react';
 import {useNavigate} from 'react-router-dom';
-import {ReactElement} from 'react';
+import {Button, Col, Stack} from 'react-bootstrap';
 
-const MenuComponent = (props: { theme: string }): ReactElement => {
+type MenuComponentProps = {
+    theme: string
+}
+
+const MenuComponent: React.FC<MenuComponentProps> = props => {
     const navigate = useNavigate(),
         theme = props.theme;
 
@@ -18,7 +22,7 @@ const MenuComponent = (props: { theme: string }): ReactElement => {
                 <Button variant={isDarkMode()} onClick={() => navigate('/contact')}>Contact</Button>
             </Stack>
         </Col>
-    )
-}
+    );
+};
 
 export default MenuComponent;

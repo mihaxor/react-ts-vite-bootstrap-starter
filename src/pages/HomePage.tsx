@@ -18,3 +18,4 @@ const HomePage = (): ReactElement => {
 }
 
 export default HomePage;
+
