@@ -1,10 +1,10 @@
 import {createSlice} from '@reduxjs/toolkit'
 
+const initialState = {value: 0} as { value: number | undefined }
+
 export const usernameSlice = createSlice({
     name: 'cards',
-    initialState: {
-        value: []
-    },
+    initialState: initialState,
     reducers: {
         updateCardsPayload: (state, action) => {
             state.value = action.payload

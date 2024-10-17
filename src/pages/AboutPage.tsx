@@ -3,7 +3,7 @@ import {useSelector} from 'react-redux';
 import {IRootState} from '@/_configurations/ReduxStoreConfig.ts';
 
 const AboutPage: React.FC = () => {
-    const cardsCount = useSelector((state: IRootState) => state.cards.value);
+    const cardsCount = useSelector<IRootState, number | undefined>(state => state.cards.value);
 
     return (
         <Figure>
