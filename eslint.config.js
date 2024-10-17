@@ -3,6 +3,7 @@ import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
+import vitest from 'eslint-plugin-vitest'
 
 export default tseslint.config(
     { ignores: ['dist'] },
@@ -11,9 +12,14 @@ export default tseslint.config(
         files: ['**/*.{ts,tsx}'],
         languageOptions: {
             ecmaVersion: 2020,
-            globals: globals.browser,
+            globals: {
+                ...globals.browser,
+                ...vitest.environments.env.globals
+            }
         },
+        ignores: ['dist', '.eslintrc.js', 'vite.config.mts'],
         plugins: {
+            vitest,
             'react-hooks': reactHooks,
             'react-refresh': reactRefresh,
         },
@@ -23,6 +29,10 @@ export default tseslint.config(
                 'warn',
                 { allowConstantExport: true },
             ],
-        },
-    },
+            ...vitest.configs.recommended.rules, // you can also use vitest.configs.all.rules to enable all rules
+            'no-unused-vars': 'warn', // warning, not error
+            'vitest/expect-expect': 'off', // eliminate distracting red squiggles while writing tests
+            'react/prop-types': 'off' // turn off props validation
+        }
+    }
 )

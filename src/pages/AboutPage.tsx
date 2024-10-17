@@ -1,9 +1,8 @@
-import {ReactElement} from 'react';
 import {Badge, Figure} from 'react-bootstrap';
 import {useSelector} from 'react-redux';
 import {IRootState} from '@/_configurations/ReduxStoreConfig.ts';
 
-const AboutPage = (): ReactElement => {
+const AboutPage: React.FC = () => {
     const cardsCount = useSelector((state: IRootState) => state.cards.value);
 
     return (

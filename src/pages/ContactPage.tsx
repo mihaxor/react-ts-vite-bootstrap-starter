@@ -1,6 +1,4 @@
-import {ReactElement} from 'react';
-
-const ContactPage = (): ReactElement => {
+const ContactPage: React.FC = () => {
     return (<></>);
 }
 
