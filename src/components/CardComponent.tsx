@@ -1,5 +1,5 @@
 import {Badge, Button, Card, Stack} from 'react-bootstrap';
-import {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useOutletContext} from 'react-router-dom';
 import {updateCardsPayload} from '@/_redux';
 import {useDispatch} from 'react-redux';
