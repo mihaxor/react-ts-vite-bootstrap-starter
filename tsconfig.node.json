@@ -12,5 +12,7 @@
       ]
     }
   },
-  "include": ["vite.config.mts"]
+  "include": [
+    "vite.config.ts"
+  ]
 }
