@@ -44,7 +44,6 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
       - name: Set Github SHA short
-        id: sha
         run: echo "GITHUB_SHA_SHORT=$(echo ${{ github.sha }} | head -c 7)" >> $GITHUB_ENV
 
       # Build și push imagine Docker
@@ -55,7 +54,7 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.sha.outputs.GITHUB_SHA_SHORT }}
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.GITHUB_SHA_SHORT }}
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
