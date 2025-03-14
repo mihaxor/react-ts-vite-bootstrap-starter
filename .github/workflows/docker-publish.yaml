@@ -3,6 +3,7 @@ name: Docker Build and Push to GHCR
 on:
   push:
     branches: [ "master" ]
+  workflow_dispatch:
 
 env:
   # Registry-ul este ghcr.io pentru GitHub Container Registry
