@@ -45,7 +45,7 @@ jobs:
 
       - name: Set Github SHA short
         id: sha
-        run: echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | head -c 7)" >> $GITHUB_ENV
+        run: echo "GITHUB_SHA_SHORT=$(git rev-list -n 1 HEAD | cut -c1-7)" >> $GITHUB_ENV
 
       # Build și push imagine Docker
       - name: Build and push Docker image
