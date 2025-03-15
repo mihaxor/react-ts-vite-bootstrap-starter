@@ -10,6 +10,13 @@ on:
 jobs:
   auto-merge:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write  # Allows pushing code to the repository
+      pull-requests: write  # Allows merging PRs
+      issues: write  # Allows creating and managing issues
+      packages: write
+      
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
