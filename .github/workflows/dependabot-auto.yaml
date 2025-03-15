@@ -1,0 +1,21 @@
+name: Auto-merge Dependabot PRs
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Auto-merge dependabot PR
+        if: github.actor == 'dependabot[bot]'
+        uses: pascalgn/automerge-action@v0.15.3
+        with:
+          merge-method: squash

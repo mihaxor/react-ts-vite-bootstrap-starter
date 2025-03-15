@@ -8,3 +8,6 @@ updates:
     directory: /
     schedule:
       interval: monthly
+    allow:
+      - dependency-type: all
+    versioning-strategy: increase
