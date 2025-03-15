@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: react-ts-vite-bootstrap-starter
+spec:
+  ports:
+    - port: 3000
+      protocol: TCP
+      targetPort: 3000
+  selector:
+    service: react-ts-vite-bootstrap-starter
+  type: ClusterIP

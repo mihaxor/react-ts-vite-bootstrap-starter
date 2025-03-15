@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-ts-vite-bootstrap-starter
+spec:
+  replicas: 3
+  template:
+    spec:
+      containers:
+      - name: react-ts-vite-bootstrap-starter
+        resources:
+            limits:
+              cpu: 2000m
+              memory: 1024Mi
+            requests:
+              cpu: 100m
+              memory: 100Mi
