@@ -7,6 +7,9 @@ on:
       - synchronize
       - reopened
 
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 jobs:
   auto-merge:
     runs-on: ubuntu-latest
