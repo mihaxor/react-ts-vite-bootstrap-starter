@@ -12,11 +12,11 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write  # Allows pushing code to the repository
-      pull-requests: write  # Allows merging PRs
-      issues: write  # Allows creating and managing issues
+      contents: write
+      pull-requests: write
+      issues: write
       packages: write
-      
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
