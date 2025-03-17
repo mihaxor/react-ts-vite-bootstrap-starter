@@ -58,10 +58,10 @@ jobs:
             --default-repo=${{ env.REGISTRY }}/${{ github.actor }} \
             --tag=${{ env.GITHUB_SHA_SHORT }}
 
-#      - name: Deploy to Kubernetes with Skaffold
-#        run: |
-#          skaffold run --profile pp --default-repo=${{ env.REGISTRY }}/${{ github.actor }} \
-#            --tag=${{ env.GITHUB_SHA_SHORT }}
+      - name: Deploy to Kubernetes with Skaffold
+        run: |
+          skaffold run --profile pp --default-repo=${{ env.REGISTRY }}/${{ github.actor }} \
+            --tag=${{ env.GITHUB_SHA_SHORT }}
 
       - name: Verify deployment
         run: kubectl get nodes
