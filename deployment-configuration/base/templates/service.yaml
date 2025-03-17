@@ -4,9 +4,9 @@ metadata:
   name: react-ts-vite-bootstrap-starter
 spec:
   ports:
-    - port: 3000
-      protocol: TCP
+    - protocol: TCP
+      port: 80
       targetPort: 3000
   selector:
     service: react-ts-vite-bootstrap-starter
-  type: ClusterIP
+  type: LoadBalancer
