@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: react-ts-vite-bootstrap-starter
 spec:
-  replicas: 3
+  replicas: 2
   template:
     spec:
       containers:

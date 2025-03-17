@@ -3,15 +3,15 @@ kind: Deployment
 metadata:
   name: react-ts-vite-bootstrap-starter
 spec:
-  replicas: 1
+  replicas: 2
   template:
     spec:
       containers:
       - name: react-ts-vite-bootstrap-starter
         resources:
             limits:
-              cpu: 1000m
-              memory: 512Mi
+              cpu: 60m
+              memory: 230Mi
             requests:
               cpu: 50m
-              memory: 64Mi
+              memory: 128Mi
