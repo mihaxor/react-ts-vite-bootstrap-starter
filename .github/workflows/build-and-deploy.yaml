@@ -60,7 +60,7 @@ jobs:
 
       - name: Deploy to Kubernetes with Skaffold
         run: |
-          skaffold deplot --profile pp \
+          skaffold deploy --profile pp \
             --default-repo=${{ env.REGISTRY }}/${{ github.actor }} \
             --tag=${{ env.GITHUB_SHA_SHORT }}
 
