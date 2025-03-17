@@ -3,9 +3,21 @@ name: Auto-merge Dependabot PRs
 on:
   pull_request:
     types:
-      - opened
+      - labeled
+      - unlabeled
       - synchronize
+      - opened
+      - edited
+      - ready_for_review
       - reopened
+      - unlocked
+  pull_request_review:
+    types:
+      - submitted
+  check_suite:
+    types:
+      - completed
+  status: { }
   workflow_dispatch:
 
 jobs:
@@ -14,14 +26,9 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Auto-merge dependabot PR
-#        if: github.actor == 'dependabot[bot]'
-#        run: echo ${{ github.actor }}
-        uses: pascalgn/automerge-action@v0.16.4
+      - id: automerge
+        name: Auto-merge dependabot PR
+        uses: "pascalgn/automerge-action@v0.16.4"
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
