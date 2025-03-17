@@ -12,7 +12,7 @@ spec:
         service: react-ts-vite-bootstrap-starter
     spec:
       containers:
-        - image: react-ts-vite-bootstrap-starter:latest
+        - image: react-ts-vite-bootstrap-starter
           imagePullPolicy: Always
           name: react-ts-vite-bootstrap-starter
           ports:
