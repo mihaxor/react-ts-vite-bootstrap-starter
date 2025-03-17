@@ -60,6 +60,9 @@ jobs:
 
       - name: Deploy to Kubernetes with Skaffold
         run: |
-          skaffold deploy --profile pp --images ${{ env.REGISTRY }}/${{ github.actor }}/${{env.IMAGE_NAME}}:${{ env.GITHUB_SHA_SHORT }} --tag=${{ env.GITHUB_SHA_SHORT }}
+          skaffold deplot --profile pp \
+            --default-repo=${{ env.REGISTRY }}/${{ github.actor }} \
+            --tag=${{ env.GITHUB_SHA_SHORT }}
+
       - name: Verify deployment
         run: kubectl get nodes
