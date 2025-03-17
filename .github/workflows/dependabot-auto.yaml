@@ -3,29 +3,35 @@ name: Auto-merge Dependabot PRs
 on:
   pull_request:
     types:
-      - opened
+      - labeled
+      - unlabeled
       - synchronize
+      - opened
+      - edited
+      - ready_for_review
       - reopened
-
-env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - unlocked
+  pull_request_review:
+    types:
+      - submitted
+  check_suite:
+    types:
+      - completed
+  status: {}
 
 jobs:
-  auto-merge:
+  automerge:
     runs-on: ubuntu-latest
-
     permissions:
       contents: write
       pull-requests: write
-      issues: write
-      packages: write
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
       - name: Auto-merge dependabot PR
         if: github.actor == 'dependabot[bot]'
-        uses: pascalgn/automerge-action@v0.15.3
-        with:
-          merge-method: squash
+        uses: pascalgn/automerge-action@v0.16.4
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
