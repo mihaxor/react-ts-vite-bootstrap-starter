@@ -31,6 +31,6 @@ jobs:
       - name: Enable auto-merge for Dependabot PR
         if: github.actor == 'dependabot[bot]'
         run: |
-          gh pr merge ${{ github.event.pull_request.html_url }} --squash --auto
+          gh pr merge ${{ github.event.pull_request.html_url }} --auto
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
