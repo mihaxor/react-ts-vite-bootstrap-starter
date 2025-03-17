@@ -8,8 +8,8 @@ build:
       docker:
         dockerfile: Dockerfile
   tagPolicy:
-    gitCommit:
-      variant: ShortCommitSha
+    envTemplate:
+      template: "{{.IMAGE_NAME}}:{{.DOCKER_TAG}}"
   local:
     push: false
 deploy:
