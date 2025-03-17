@@ -60,6 +60,6 @@ jobs:
 
       - name: Deploy to Kubernetes with Skaffold
         run: |
-          skaffold run --profile pp
+          skaffold deploy --profile pp
       - name: Verify deployment
         run: kubectl get nodes
