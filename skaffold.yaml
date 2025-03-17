@@ -8,12 +8,14 @@ build:
       docker:
         dockerfile: Dockerfile
   tagPolicy:
-    envTemplate:
-      template: "{{.IMAGE_NAME}}:{{.GITHUB_SHA_SHORT}}"
+    gitCommit:
+      variant: ShortCommitSha
   local:
     push: false
 deploy:
-  kubectl: {}
+  kubectl:
+    setValueTemplates:
+      TAG: "{{.VARIABLE_TEST}}"
   statusCheckDeadlineSeconds: 240
 profiles:
   - name: push

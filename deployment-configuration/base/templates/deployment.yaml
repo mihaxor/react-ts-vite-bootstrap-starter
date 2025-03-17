@@ -12,9 +12,9 @@ spec:
         service: react-ts-vite-bootstrap-starter
     spec:
       containers:
-        - image: react-ts-vite-bootstrap-starter
-          imagePullPolicy: IfNotPresent
+        - image: react-ts-vite-bootstrap-starter/${TAG}
           name: react-ts-vite-bootstrap-starter
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
               protocol: TCP
