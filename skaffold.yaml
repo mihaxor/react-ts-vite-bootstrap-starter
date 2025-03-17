@@ -13,9 +13,7 @@ build:
   local:
     push: false
 deploy:
-  kubectl:
-    setValueTemplates:
-      TAG: "{{.VARIABLE_TEST}}"
+  kubectl: {}
   statusCheckDeadlineSeconds: 240
 profiles:
   - name: push

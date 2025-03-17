@@ -9,7 +9,6 @@ env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
   GITHUB_SHA_SHORT: ${{ github.sha }}
-  VARIABLE_TEST: test
 
 jobs:
   build-and-deploy:

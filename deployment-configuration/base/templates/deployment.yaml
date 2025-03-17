@@ -12,9 +12,9 @@ spec:
         service: react-ts-vite-bootstrap-starter
     spec:
       containers:
-        - image: react-ts-vite-bootstrap-starter/${TAG}
-          name: react-ts-vite-bootstrap-starter
+        - image: ghcr.io/glcata/react-ts-vite-bootstrap-starter:9b1540b
           imagePullPolicy: IfNotPresent
+          name: react-ts-vite-bootstrap-starter
           ports:
             - containerPort: 3000
               protocol: TCP
