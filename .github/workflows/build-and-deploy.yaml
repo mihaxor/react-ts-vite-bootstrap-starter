@@ -20,7 +20,7 @@ jobs:
       id-token: write
 
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Set short SHA
@@ -33,18 +33,24 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.K8S_DO_ACCESS_TOKEN }}
+
+      - name: Set up Kubernetes context
+        env:
+          KUBE_CONFIG: ${{ secrets.KUBECONFIG }}
+        run: |
+          mkdir -p ~/.kube
+          echo "${{ secrets.K8S_KUBE_CONFIG }}" > ~/.kube/config
+          doctl kubernetes cluster kubeconfig save "${{ secrets.K8S_CLUSTER_NAME }}"
+
       - name: Install Skaffold
         run: |
           curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64
           chmod +x skaffold
           sudo mv skaffold /usr/local/bin
-
-      - name: Set up Kubernetes context
-        uses: azure/k8s-set-context@v4
-        with:
-          method: service-account
-          k8s-url: ${{ secrets.K8S_API_SERVER }}
-          k8s-secret: ${{ secrets.K8S_TOKEN }}
 
 #      - name: Build and push Docker image with Skaffold
 #        run: |
@@ -58,4 +64,4 @@ jobs:
 #            --tag=${{ env.GITHUB_SHA_SHORT }}
 
       - name: Verify deployment
-        run: kubectl get pods
+        run: kubectl get nodes
