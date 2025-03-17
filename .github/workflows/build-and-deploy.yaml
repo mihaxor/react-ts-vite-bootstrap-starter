@@ -62,6 +62,3 @@ jobs:
           skaffold deploy --profile pp \
             --default-repo=${{ env.REGISTRY }}/${{ github.actor }} \
             --tag=${{ env.GITHUB_SHA_SHORT }}
-
-      - name: Verify deployment
-        run: kubectl get nodes
