@@ -40,12 +40,11 @@ jobs:
           sudo mv skaffold /usr/local/bin
 
       - name: Set up Kubernetes context
-        uses: azure/k8s-set-context@v3
+      - uses: azure/k8s-set-context@v4
         with:
           method: service-account
-          server: ${{ secrets.K8S_API_SERVER }}
-          token: ${{ secrets.K8S_TOKEN }}
-          namespace: ${{ secrets.K8S_NAMESPACE }}
+          k8s-url: ${{ secrets.K8S_API_SERVER }}
+          k8s-secret: ${{ secrets.K8S_TOKEN }}
 
 #      - name: Build and push Docker image with Skaffold
 #        run: |
