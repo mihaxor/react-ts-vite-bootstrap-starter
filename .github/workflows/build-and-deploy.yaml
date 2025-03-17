@@ -44,6 +44,7 @@ jobs:
         with:
           method: service-account
           k8s-url: ${{ secrets.K8S_API_SERVER }}
+          k8s-secret: ${{ secrets.K8S_SECRET }}
           token: ${{ secrets.K8S_TOKEN }}
 
 #      - name: Build and push Docker image with Skaffold
