@@ -39,8 +39,8 @@ spec:
             capabilities:
               drop:
                 - NET_RAW
-      imagePullSecrets:
-        - name: ghcr-secret
+#      imagePullSecrets:
+#        - name: ghcr-secret
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
