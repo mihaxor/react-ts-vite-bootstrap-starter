@@ -52,12 +52,12 @@ jobs:
           chmod +x skaffold
           sudo mv skaffold /usr/local/bin
 
-#      - name: Build and push Docker image with Skaffold
-#        run: |
-#          skaffold build --push=true \
-#            --default-repo=${{ env.REGISTRY }}/${{ github.actor }} \
-#            --tag=${{ env.GITHUB_SHA_SHORT }}
-#
+      - name: Build and push Docker image with Skaffold
+        run: |
+          skaffold build --push=true \
+            --default-repo=${{ env.REGISTRY }}/${{ github.actor }} \
+            --tag=${{ env.GITHUB_SHA_SHORT }}
+
 #      - name: Deploy to Kubernetes with Skaffold
 #        run: |
 #          skaffold run --profile pp --default-repo=${{ env.REGISTRY }}/${{ github.actor }} \
