@@ -9,7 +9,7 @@ build:
         dockerfile: Dockerfile
   tagPolicy:
     envTemplate:
-      template: "{{.IMAGE_NAME}}:{{.DOCKER_TAG}}"
+      template: "{{.IMAGE_NAME}}:{{.GITHUB_SHA_SHORT}}"
   local:
     push: false
 deploy:
