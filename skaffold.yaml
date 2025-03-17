@@ -9,8 +9,7 @@ build:
         dockerfile: Dockerfile
   tagPolicy:
     gitCommit:
-      variant: AbbrevCommitSha
-      ignoreChanges: true
+      variant: ShortCommitSha
   local:
     push: false
 deploy:
