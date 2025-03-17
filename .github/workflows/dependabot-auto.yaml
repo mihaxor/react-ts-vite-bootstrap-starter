@@ -20,7 +20,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Auto-merge dependabot PR
-        if: github.actor == 'dependabot[bot]'
-        uses: pascalgn/automerge-action@v0.16.4
-        env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+#        if: github.actor == 'dependabot[bot]'
+        run: echo ${{ github.actor }}
+#        uses: pascalgn/automerge-action@v0.16.4
+#        env:
+#          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
