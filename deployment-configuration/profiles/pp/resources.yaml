@@ -10,8 +10,8 @@ spec:
       - name: react-ts-vite-bootstrap-starter
         resources:
             limits:
-              cpu: 1000m
-              memory: 512Mi
+              cpu: 60m
+              memory: 230Mi
             requests:
-              cpu: 100m
+              cpu: 50m
               memory: 128Mi
