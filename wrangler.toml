@@ -1,4 +1,5 @@
 name = "react-ts-vite-bootstrap-starter"
+main = "./build/static/index-CrteyGaZ.js"
 type = "module"
 
 [site]
