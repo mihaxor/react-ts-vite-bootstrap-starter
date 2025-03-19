@@ -1,0 +1,5 @@
+name = "react-ts-vite-bootstrap-starter"
+type = "module"
+
+[site]
+bucket = "./build"
