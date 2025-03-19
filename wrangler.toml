@@ -1,6 +1,6 @@
 name = "react-ts-vite-bootstrap-starter"
 main = "./build/static/index-CrteyGaZ.js"
-type = "module"
+compatibility_date = "2025-03-19"
 
 [site]
 bucket = "./build"
