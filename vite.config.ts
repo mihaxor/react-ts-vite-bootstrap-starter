@@ -25,15 +25,9 @@ export default defineConfig({
         outDir: './build',
         assetsDir: 'static',
         minify: true,
-        chunkSizeWarningLimit: 1600,
+        chunkSizeWarningLimit: 1600
         // moduleResolution: 'bundler',
         // skipLibCheck: true
-        target: 'esnext',
-        rollupOptions: {
-            output: {
-                format: 'es',
-            },
-        },
     },
     css: {
         preprocessorOptions: {
