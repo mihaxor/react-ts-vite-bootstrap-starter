@@ -756,9 +756,9 @@
     tslib "^2.8.0"
 
 "@swc/types@^0.1.19":
-  version "0.1.19"
-  resolved "https://registry.yarnpkg.com/@swc/types/-/types-0.1.19.tgz#65d9fe81e0a1dc7e861ad698dd581abe3703a2d2"
-  integrity sha512-WkAZaAfj44kh/UFdAQcrMP1I0nwRqpt27u+08LMBYMqmQfwwMofYoMh/48NGkMMRfC4ynpfwRbJuu8ErfNloeA==
+  version "0.1.20"
+  resolved "https://registry.yarnpkg.com/@swc/types/-/types-0.1.20.tgz#6fcc39b6fd958f5b976031f693eb85be8c16d15a"
+  integrity sha512-/rlIpxwKrhz4BIplXf6nsEHtqlhzuNN34/k3kMAXH4/lvVoA3cdq+60aqVNnyvw2uITEaCi0WV3pxBe4dQqoXQ==
   dependencies:
     "@swc/counter" "^0.1.3"
 
