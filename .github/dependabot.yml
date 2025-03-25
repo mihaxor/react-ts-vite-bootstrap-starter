@@ -12,5 +12,7 @@ updates:
       timezone: "Europe/Bucharest"
     allow:
       - dependency-type: direct
-        update-types: [ "version-update:semver-minor", "version-update:semver-patch" ]
+        update-type: "version-update:semver-minor"
+      - dependency-type: direct
+        update-type: "version-update:semver-patch"
     versioning-strategy: increase
