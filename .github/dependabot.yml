@@ -7,7 +7,11 @@ updates:
   - package-ecosystem: npm
     directory: /
     schedule:
-      interval: weekly
+    #      interval: daily
+      days: [ monday, tuesday, wednesday, friday ]
+    #      time: 7:00
+    #      timezone: Europe/Bucharest
     allow:
-      - dependency-type: all
+      - dependency-type: direct
+        update-types: [ "version-update:semver-minor", "version-update:semver-patch" ]
     versioning-strategy: increase
