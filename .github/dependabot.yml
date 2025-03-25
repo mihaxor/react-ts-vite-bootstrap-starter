@@ -7,7 +7,7 @@ updates:
   - package-ecosystem: npm
     directory: /
     schedule:
-    #      interval: daily
+      interval: daily
       days: [ monday, tuesday, wednesday, friday ]
     #      time: 7:00
     #      timezone: Europe/Bucharest
