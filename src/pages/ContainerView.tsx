@@ -1,6 +1,6 @@
 import {Button, Col, Container, Row, Stack} from 'react-bootstrap';
 import React, {useEffect, useState} from 'react';
-import {Outlet} from 'react-router-dom';
+import {Outlet} from 'react-router';
 import MenuComponent from '../components/MenuComponent.tsx';
 import {MoonStarsFill, SunFill} from 'react-bootstrap-icons';
 

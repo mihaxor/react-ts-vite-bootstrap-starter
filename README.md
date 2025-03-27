@@ -15,7 +15,7 @@ Currently, two official plugins are available:
 - **React**: For building user interfaces.
 - **react-bootstrap**: For UI components.
 - **react-redux**: For state management.
-- **react-router-dom**: For routing.
+- **react-router**: For routing.
 
 ## Installation
 
