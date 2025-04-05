@@ -1,10 +1,10 @@
 import {Button, Col, Container, Row, Stack} from 'react-bootstrap';
 import React, {useEffect, useState} from 'react';
 import {Outlet} from 'react-router';
-import MenuComponent from '../components/MenuComponent.tsx';
+import MenuComp from '@/common/components/MenuComp';
 import {MoonStarsFill, SunFill} from 'react-bootstrap-icons';
 
-const ContainerView: React.FC = () => {
+const App: React.FC = () => {
     const [theme, setTheme] = useState<string>('dark');
 
     useEffect(() => {
@@ -26,7 +26,7 @@ const ContainerView: React.FC = () => {
                         </Button>
                     </Stack>
                 </Col>
-                <MenuComponent theme={theme} />
+                <MenuComp theme={theme} />
             </Row>
             <br />
             <Outlet context={theme} />
@@ -34,4 +34,4 @@ const ContainerView: React.FC = () => {
     )
 };
 
-export default ContainerView
+export default App

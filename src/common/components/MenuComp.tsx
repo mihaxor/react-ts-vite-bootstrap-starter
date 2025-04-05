@@ -6,7 +6,7 @@ type MenuComponentProps = {
     theme: string
 }
 
-const MenuComponent: React.FC<MenuComponentProps> = props => {
+const MenuComp: React.FC<MenuComponentProps> = props => {
     const navigate = useNavigate(),
         theme = props.theme;
 
@@ -25,4 +25,4 @@ const MenuComponent: React.FC<MenuComponentProps> = props => {
     );
 };
 
-export default MenuComponent;
+export default MenuComp;

@@ -1,7 +1,7 @@
-import HomePage from '../pages/HomePage.tsx';
-import AboutPage from '../pages/AboutPage.tsx';
-import ContactPage from '../pages/ContactPage.tsx';
 import React from 'react';
+import HomePage from '@/pages/HomePage';
+import AboutPage from '@/pages/AboutPage';
+import ContactPage from '@/pages/ContactPage';
 
 type RouteConfig = {
     path: string,

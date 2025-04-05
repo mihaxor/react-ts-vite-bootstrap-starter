@@ -1,5 +1,5 @@
 import {configureStore} from '@reduxjs/toolkit';
-import {cardsReducer} from '@/_redux';
+import {cardsReducer} from '@/common/store';
 
 const isProduction = process.env.NODE_ENV === 'production';
 const Store = configureStore({

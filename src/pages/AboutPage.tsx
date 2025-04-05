@@ -1,6 +1,6 @@
 import {Badge, Figure} from 'react-bootstrap';
 import {useSelector} from 'react-redux';
-import {IRootState} from '@/_configurations/ReduxStoreConfig.ts';
+import {IRootState} from '@/app/ReduxStoreConfig';
 import React from 'react';
 
 const AboutPage: React.FC = () => {

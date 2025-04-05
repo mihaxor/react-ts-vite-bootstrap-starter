@@ -1,10 +1,10 @@
 import {Badge, Button, Card, Stack} from 'react-bootstrap';
 import React, {useEffect, useState} from 'react';
 import {useOutletContext} from 'react-router';
-import {updateCardsPayload} from '@/_redux';
 import {useDispatch} from 'react-redux';
+import {updateCardsPayload} from '@/common/store';
 
-const CardComponent: React.FC = () => {
+const CardComp: React.FC = () => {
 
     const [count, setCount] = useState<number>(0),
         theme = useOutletContext<string>(),
@@ -33,4 +33,4 @@ const CardComponent: React.FC = () => {
     );
 }
 
-export default CardComponent;
+export default CardComp;

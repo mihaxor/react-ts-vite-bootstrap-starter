@@ -1,12 +1,12 @@
-import {StrictMode} from 'react'
-import {createRoot} from 'react-dom/client'
-import ContainerView from './pages/ContainerView.tsx'
+import {StrictMode} from 'react';
+import {createRoot} from 'react-dom/client';
 import {BrowserRouter, Navigate, Route, Routes} from 'react-router';
-import {RoutesConfig} from './_configurations/RoutesConfig.ts';
-import Store from '@/_configurations/ReduxStoreConfig.ts';
+import {RoutesConfig} from '@/app/RoutesConfig';
 import {Provider} from 'react-redux';
+import Store from '@/app/ReduxStoreConfig';
+import App from '@/App';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './resources/style.css';
+import '@/app/style.css';
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
@@ -17,7 +17,7 @@ createRoot(document.getElementById('root')!).render(
                         path='/'
                         element={<Navigate to='/home' />}
                     />
-                    <Route path='/' element={<ContainerView />}>
+                    <Route path='/' element={<App />}>
                         {RoutesConfig.map((route, index) => (
                             <Route
                                 key={index}
