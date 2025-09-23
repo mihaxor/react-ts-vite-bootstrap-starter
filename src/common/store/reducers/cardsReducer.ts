@@ -6,7 +6,7 @@ export const usernameSlice = createSlice({
     name: 'cards',
     initialState: initialState,
     reducers: {
-        updateCardsPayload: (state, action) => {
+        updateCardsPayload: (state, action: { payload: number, type: string }) => {
             state.value = action.payload
         }
     }
