@@ -12,7 +12,7 @@ const CardComp: React.FC = () => {
 
     useEffect(() => {
         dispatch(updateCardsPayload(count));
-    }, [count]); // eslint-disable-line react-hooks/exhaustive-deps
+    }, [count]);
 
     return (
         <Card style={{width: '20rem'}} data-bs-theme={theme}>
